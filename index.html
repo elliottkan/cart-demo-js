@@ -12,7 +12,6 @@
 <body>
   <header class="relative">
     <nav>
-      <!-- Secondary navigation -->
       <div class="bg-white shadow-sm">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-16 items-center justify-between">
@@ -31,14 +30,14 @@
               </a>
               <div class="flex flex-1 items-center justify-end">
               <!-- Cart -->
-              <div class="ml-4 flow-root lg:ml-8">
-                <a href="#" class="group -m-2 flex items-center p-2">
+              <div onclick="openModal()" class="ml-4 flow-root lg:ml-8">
+                <div class="group -m-2 flex items-center p-2">
                   <svg class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                   </svg>
-                  <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                  <span data-cart-quantity class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                   <span class="sr-only">items in cart, view bag</span>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -47,91 +46,21 @@
       </div> 
     </nav>
   </header>
+  <!-- Products -->
   <div class="bg-white">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-        <div>
-          <div class="relative">
-            <div class="relative h-72 w-full overflow-hidden rounded-lg">
-              <img src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg" alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls." class="h-full w-full object-cover object-center">
-            </div>
-            <div class="relative mt-4">
-              <h3 class="text-sm font-medium text-gray-900">Zip Tote Basket</h3>
-              <p class="mt-1 text-sm text-gray-500">White and black</p>
-            </div>
-            <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-              <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
-              <p class="relative text-lg font-semibold text-white">$140</p>
-            </div>
-          </div>
-          <div class="mt-6">
-            <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">Add to bag<span class="sr-only">, Zip Tote Basket</span></a>
-          </div>
-        </div>
-  
-        <!-- More products... -->
-        <div>
-          <div class="relative">
-            <div class="relative h-72 w-full overflow-hidden rounded-lg">
-              <img src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg" alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls." class="h-full w-full object-cover object-center">
-            </div>
-            <div class="relative mt-4">
-              <h3 class="text-sm font-medium text-gray-900">Zip Tote Basket</h3>
-              <p class="mt-1 text-sm text-gray-500">White and black</p>
-            </div>
-            <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-              <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
-              <p class="relative text-lg font-semibold text-white">$140</p>
-            </div>
-          </div>
-          <div class="mt-6">
-            <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">Add to bag<span class="sr-only">, Zip Tote Basket</span></a>
-          </div>
-        </div>
-        <!-- More products... -->
-        <div>
-          <div class="relative">
-            <div class="relative h-72 w-full overflow-hidden rounded-lg">
-              <img src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg" alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls." class="h-full w-full object-cover object-center">
-            </div>
-            <div class="relative mt-4">
-              <h3 class="text-sm font-medium text-gray-900">Zip Tote Basket</h3>
-              <p class="mt-1 text-sm text-gray-500">White and black</p>
-            </div>
-            <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-              <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
-              <p class="relative text-lg font-semibold text-white">$140</p>
-            </div>
-          </div>
-          <div class="mt-6">
-            <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">Add to bag<span class="sr-only">, Zip Tote Basket</span></a>
-          </div>
-        </div>
-        <!-- More products... -->
-        <div>
-          <div class="relative">
-            <div class="relative h-72 w-full overflow-hidden rounded-lg">
-              <img src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg" alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls." class="h-full w-full object-cover object-center">
-            </div>
-            <div class="relative mt-4">
-              <h3 class="text-sm font-medium text-gray-900">Zip Tote Basket</h3>
-              <p class="mt-1 text-sm text-gray-500">White and black</p>
-            </div>
-            <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-              <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
-              <p class="relative text-lg font-semibold text-white">$140</p>
-            </div>
-          </div>
-          <div class="mt-6">
-            <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">Add to bag<span class="sr-only">, Zip Tote Basket</span></a>
-          </div>
-        </div>
-        
+      <div data-shop-items class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
       </div>
     </div>
   </div>
   
+  <!-- MiniCart -->
+  <div data-shop-mini-cart>
+  </div>
+
+  
 </body>
 
+<script src="src/product.js"></script>
 <script src="src/app.js"></script>
 </html>
