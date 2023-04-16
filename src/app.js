@@ -1,7 +1,14 @@
 let shop = document.querySelector("[data-shop-items]");
 let minicart = document.querySelector("[data-shop-mini-cart]");
-
 let cart = [];
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  initShop();
+});
+
+function initShop() {
+  generateShop();
+}
 
 function generateShop() {
   return (shop.innerHTML = shopItems
@@ -40,8 +47,6 @@ function generateShop() {
     })
     .join(""));
 }
-
-generateShop();
 
 function generateMiniCartItems() {
   const miniCartInner = document.querySelector('[data-mini-cart-inner]');
@@ -170,25 +175,23 @@ function updateStock(id, itemQuantity) {
 }
 
 function removeItem(id) {
-
+  let cartItem = cart.find(item => item.id === id);
+  let cartItemIndex = cart.indexOf(cartItem);
+  let cartItemQuantity = cartItem.itemQuantity;
+  cart.splice(cartItemIndex, 1);
+  updateStock(id, -cartItemQuantity);
+  updateMiniCartFinalPrice();
+  let miniCartItem = document.querySelector(`[data-mini-cart-item-id="${id}"]`);
+  miniCartItem.remove();
+  let cartQuantity = parseInt(document.querySelector("[data-cart-quantity]").innerHTML);
+  let newCartValue = cartQuantity - cartItemQuantity;
+  document.querySelector("[data-cart-quantity]").innerHTML = newCartValue;
 }
 
 function openModal() {
   generateMiniCartItems()
   const modal = document.querySelector("[data-mini-cart-slideout]");
   modal.classList.remove("hidden");
-  modal.addEventListener(
-    "click",
-    function(event) {
-      // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
-      if (
-        !event.target.closest("[data-modal-area]")
-      ) {
-        closeModal()
-      }
-    },
-    false
-  )
 }
 
 function closeModal() {
